@@ -18,14 +18,12 @@ public class Sound
     /* to be implemented in part (a) */
     int ans = 0;
     for(int i = 0; i < samples.length; i++)
-      if(abs(samples[i]) > limit){
-        if(samples[i] > 0){
-          samples[i] = limit;
-          ans++;
-        } else if (samples[i] < 0){
-          samples[i] = -1*limit;
-          ans++;
-        }
+      if(samples[i] > limit){
+        samples[i] = limit;
+        ans++;
+      } else if(-1 * samples[i] > limit){
+        samples[i] = -1 * limit;
+        ans++;
       }
     return ans;
   }
